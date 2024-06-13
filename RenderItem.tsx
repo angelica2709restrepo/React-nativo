@@ -5,27 +5,27 @@ import { Task } from "./App";
 
 interface ItemProps{
     item:Task
-    markDone:()=>void;
-    deleteFunction:()=>void;
+    markDone:(tarea:Task)=>void;
+    deleteFunction:(tarea:Task)=>void;
 }
 
 
 export default function RenderItem({item,markDone,deleteFunction}:ItemProps){
     return(
     <View style={dibujar.taskcontainer}>
-      <TouchableOpacity onPress={markDone}>
+      <TouchableOpacity onPress={()=>markDone(item)}>
       <Text 
       style={item.estado ? dibujar.textodone: dibujar.textt}
       >
-      {item.Titulo}
+      {item.titulo}
       </Text>
       <Text style={dibujar.textt}>
-      {item.fecha.toDateString()}
+      {new Date(item.fecha).toDateString()}
       </Text>
       </TouchableOpacity>
       {
       item.estado &&
-      <TouchableOpacity style={dibujar.removebutton} onPress={deleteFunction}>
+      <TouchableOpacity style={dibujar.removebutton} onPress={()=>deleteFunction(item)}>
         <Text style={dibujar.wtext}>
           Eliminar
         </Text>
