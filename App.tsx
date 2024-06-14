@@ -38,6 +38,10 @@ export default function App(){
     getData()
   },[])
   const addTask=()=>{
+    if (tareas.some(task=>task.titulo===text)){
+      console.log("Esta tarea ya existe")
+      return
+    }
     const tmp=[...tareas]
     const newTask={
       titulo:text,
@@ -56,17 +60,22 @@ export default function App(){
     t.estado=!t.estado
     setTask(tmp)
     storeData(tmp)
-    console.log("Done")}
+    console.log("Seleccionado")}
   const deleteFunction=(tarea:Task)=>{
     const tmp=[...tareas]
     const index=tmp.findIndex(k=>k.titulo===tarea.titulo)
-    tmp.splice(index,1)
-    storeData(tmp)
-    console.log("delete")}
+    if (index!==-1){
+      tmp.splice(index,1)
+      setTask(tmp)
+      storeData(tmp)
+      console.log("Tarea eliminada")
+    }
+  }
+
   return(
     <View style={dibujar.Container}>
       <Text style={dibujar.Title}>
-        HOLA BUENAS TARDES
+        Hola, escribe tu tarea:
       </Text>
       <View style={dibujar.InputContainer}>
         <TextInput placeholder="Agregar" 

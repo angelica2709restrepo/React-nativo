@@ -3,58 +3,59 @@ import { StyleSheet, Dimensions} from "react-native";
 const dibujar=StyleSheet.create({
     Container:{
       width:'100%',
-      padding:20
+      height:'100%',
+      padding:20,
+      backgroundColor:'#ffd9cc'
     },
     Title:{
-      fontSize:20,
-      color:'#008BFF',
+      fontSize:25,
+      color:'#8c66ff',
     },
     TextInput:{
-      borderColor:'#0019FF',
+      borderColor:'#d966ff',
       borderWidth:1,
       borderRadius:15,
       width:Dimensions.get("screen").width*0.6,
       paddingLeft:10
     },
     textt:{
-      fontSize:16,
-      color:'#008BFF',
+      fontSize:15,
+      color:'black',
     },
     wtext:{
-      fontSize:16,
-      color:'#FF0000',
+      fontSize:15,
+      color:'black',
     },
     InputContainer:{
-      marginTop:20,
+      marginTop:30,
       flexDirection:"row",
       justifyContent:"space-between"
     },
     Buttonn:{
       width:Dimensions.get("screen").width*0.2,
-      backgroundColor:'#539AFF',
+      backgroundColor:'#d966ff',
       justifyContent:'center',
       alignItems:'center',
       borderRadius:15
     },
     taskcontainer:{
-      paddingVertical:20,
-      borderBottomColor:'#8800FF',
-      borderBottomWidth:10,
+      paddingVertical:25,
+      borderBottomColor:'#6666ff',
+      borderBottomWidth:5,
       flexDirection:'row',
-      justifyContent:'space-between'
+      justifyContent:'space-between',
     },
     textodone:{
       fontSize:16,
-      color:"black",
+      color:"red",
       textDecorationLine:"line-through"
     },
     removebutton:{
-      backgroundColor:'#8800FF',
+      backgroundColor:'#ff6666',
       justifyContent:'center',
       alignContent:'center',
       paddingHorizontal:15,
-      borderRadius:10
-  
+      borderRadius:15
     }
   })
   export default dibujar
